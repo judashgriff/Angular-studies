@@ -7,10 +7,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./directory.component.css']
 })
 export class DirectoryComponent implements OnInit {
-  cake: string;
+  cakes = [
+    {name: 'Dobostorta', type: 'chocolate', color: 'chocolate'},
+    {name: 'Zserbó', type: 'chocolate', color: 'chocolate'},
+    {name: 'Krémes', type: 'vanillia cream', color: 'wheat'},
+    {name: 'Rákóczi túrós', type: 'cabbage cheese', color: 'cornsilk'},
+    {name: 'Mandula torta', type: 'almond cream', color: 'LightGoldenRodYellow'},
+  ];
+  constructor() {
 
-  constructor(private route: ActivatedRoute) {
-    this.cake = route.snapshot.params['cake'];
   }
 
   ngOnInit() {

@@ -1,4 +1,11 @@
-<p>
-  directory works!
-</p>
-<p>{{cake}}</p>
+<h2>Cake list</h2>
+
+<ul class="cake_list">
+  <li *ngFor="let cake of cakes">
+    <div class="single_cake">
+      <span [ngStyle]="{'background': cake.color}">{{cake.type}} cake</span>
+      <h3>{{cake.name}}</h3>
+      <div (click)="remove($event)" [attr.data-name]="cake.name">delete</div>
+    </div>
+  </li>
+</ul>

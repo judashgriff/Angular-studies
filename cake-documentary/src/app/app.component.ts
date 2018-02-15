@@ -7,12 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Cake Documentary';
-  cake = {
-    name: 'Chocolate cake',
-    type: 'chocolate',
-  };
 
-  yell(e){
-    alert("YAAAAAAAAAAAAAAAAAAAAAAAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOUUUUUUUUUUUUUUUUUUUUUUUUEEEEEEEEEIIIIIIIIIIIIIIII!!!!!!!!!!!!!");
-  }
 }

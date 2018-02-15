@@ -36,7 +36,7 @@ nav {
     margin: 0 auto;
 }
 
-.nav_links {
+.nav_links_container {
     padding: 0 !important;
     background: #2ba8eb;
     display: flex;
@@ -48,13 +48,13 @@ nav {
     width: 100%;
 }
 
-.nav_links > li {
+.nav_links {
     flex-basis: 0;
     flex-grow: 1;
     list-style-type: none;
 }
 
-.nav_links a {
+.nav_links > a {
     text-decoration: none;
     text-align: center;
     color: #eee;
@@ -62,7 +62,44 @@ nav {
     padding: 10.5px 0;
 }
 
-.nav_links a:hover {
+.nav_links > a:hover {
     background: #279eda;
     transition: 0.4s ease-out;
+}
+
+.main_content {
+    background: #eeeeee;
+    box-shadow: 8px 4px 4px rgba(0,0,0,0.2), -2px 4px 2px rgba(0,0,0,0.2), -1px -1px 3px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 0 16px;
+}
+
+app-home p {
+    text-align: center;
+}
+
+.cake_list {
+    padding: 0 0 0 16px;
+}
+
+.single_cake {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: solid 1px #b4b4b4;
+}
+
+.single_cake > * {
+    flex-basis: 0;
+    flex-grow: 5;
+    padding: 3px 0 3px 6px;
+    margin: 3px 0 9px 0;
+}
+
+.single_cake > div {
+    flex-grow: 2 !important;
+}
+
+.single_cake > div:hover {
+    cursor: pointer;
 }

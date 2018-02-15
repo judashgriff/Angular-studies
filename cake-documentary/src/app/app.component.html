@@ -3,15 +3,13 @@ Welcome to {{ title }}!
 </h1>
 <header>
   <nav>
-    <ul class="nav_links">
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/directory">Directory</a></li>
+    <ul class="nav_links_container">
+      <li class="nav_links"><a routerLink="/">Home</a></li>
+      <li class="nav_links"><a routerLink="/directory">Directory</a></li>
     </ul>
   </nav>
 </header>
-<section>
-  <app-home [cake]="cake" (onYell)="yell($event)"></app-home>
-
+<section class="main_content">
   <router-outlet></router-outlet>
 </section>
 
