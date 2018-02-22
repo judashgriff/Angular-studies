@@ -1,0 +1,7 @@
+[
+    {"id":0, "name": "Dobostorta", "type": "chocolate", "color": "chocolate"},
+    {"id":1, "name": "Zserbó", "type": "chocolate", "color": "chocolate"},
+    {"id":2, "name": "Krémes", "type": "vanillia cream", "color": "wheat"},
+    {"id":3, "name": "Rákóczi túrós", "type": "cabbage cheese", "color": "cornsilk"},
+    {"id":4, "name": "Mandula torta", "type": "almond cream", "color": "LightGoldenRodYellow"}
+]

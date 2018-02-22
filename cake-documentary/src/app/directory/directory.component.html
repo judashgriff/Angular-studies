@@ -1,11 +1,48 @@
 <h2>Cake list</h2>
 
+<div class="filter">
+  <label for="filter-input">Filter cakes by name:</label>
+  <input id="filter-input" type="text" [(ngModel)]="term" />
+</div>
+
 <ul class="cake_list">
-  <li *ngFor="let cake of cakes">
+  <li class="single_cake_container" *ngFor="let cake of cakes | filter:term">
     <div class="single_cake">
       <span [ngStyle]="{'background': cake.color}">{{cake.type}} cake</span>
       <h3>{{cake.name}}</h3>
-      <div (click)="remove($event)" [attr.data-name]="cake.name">delete</div>
+      <div [attr.data-id]="cake.id" (click)="fbModifyData()">
+        <img src="../../assets/cogwheel.png" alt="" width="22px">
+      </div>
+      <div [attr.data-id]="cake.id" (click)="fbRemoveData(cake.id)">
+        <img src="../../assets/delete.png" alt="" width="18px">
+      </div>
     </div>
   </li>
 </ul>
+
+<form class="add_cake_container">
+  <div class="add_cake_inputs">
+    <input
+      class="add_cake add_cake_name"
+      type="text"
+      placeholder="Add cake name"
+      [ngModelOptions]="{standalone: true}"
+      [(ngModel)]="name"
+    />
+    <input
+      class="add_cake add_cake_type"
+      type="text"
+      placeholder="Add cake type"
+      [ngModelOptions]="{standalone: true}"
+      [(ngModel)]="type"
+    />
+    <input
+      class="add_cake add_cake_color"
+      type="text"
+      placeholder="Add cake color"
+      [ngModelOptions]="{standalone: true}"
+      [(ngModel)]="color"
+    />
+  </div>
+  <button class="add_cake_button" (click)="fbPostData(name, type, color)">Add cake</button>
+</form>
