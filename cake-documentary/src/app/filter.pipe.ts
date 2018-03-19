@@ -11,5 +11,4 @@ export class FilterPipe implements PipeTransform {
       return element.name.toLowerCase().includes(term.toLowerCase());
     })
   }
-
 }

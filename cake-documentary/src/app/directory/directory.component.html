@@ -10,7 +10,7 @@
     <div class="single_cake">
       <span [ngStyle]="{'background': cake.color}">{{cake.type}} cake</span>
       <h3>{{cake.name}}</h3>
-      <div [attr.data-id]="cake.id" (click)="fbModifyData()">
+      <div [attr.data-id]="cake.id" (click)="fbModifyData(cake.id, 'MyName', 'MyType', 'white')">
         <img src="../../assets/cogwheel.png" alt="" width="22px">
       </div>
       <div [attr.data-id]="cake.id" (click)="fbRemoveData(cake.id)">
@@ -46,3 +46,32 @@
   </div>
   <button class="add_cake_button" (click)="fbPostData(name, type, color)">Add cake</button>
 </form>
+
+<section id="modify_container" class="hidden">
+  <form class="add_cake_container">
+    <div class="add_cake_inputs">
+      <input
+        class="add_cake add_cake_name"
+        type="text"
+        placeholder="Modify cake name"
+        [ngModelOptions]="{standalone: true}"
+        [(ngModel)]="name"
+      />
+      <input
+        class="add_cake add_cake_type"
+        type="text"
+        placeholder="Modify cake type"
+        [ngModelOptions]="{standalone: true}"
+        [(ngModel)]="type"
+      />
+      <input
+        class="add_cake add_cake_color"
+        type="text"
+        placeholder="Modify cake color"
+        [ngModelOptions]="{standalone: true}"
+        [(ngModel)]="color"
+      />
+    </div>
+    <button class="add_cake_button" (click)="fbPostData(name, type, color)">Change cake</button>
+  </form>
+</section>

@@ -17,9 +17,6 @@ export class DirectoryComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    // this.dataService.fetchData().subscribe(
-    //   (data) => this.cakes = data as any
-    // );
     this.fbGetData();
   }
 
@@ -38,6 +35,13 @@ export class DirectoryComponent implements OnInit {
     
   }
 
+  fbUpdateData(){
+    firebase.database().ref('/').onWrite(event => {
+      console.log(event.data.val());
+      this.cakes.push(event.data.val());
+    });
+  }
+
   fbRemoveData(cakeId){
     const dataSet = firebase.database().ref('/').once('value').then(function(snapshot) {
       return snapshot.val();
@@ -45,9 +49,8 @@ export class DirectoryComponent implements OnInit {
       const path = Object.keys(data)[cakeId];
       firebase.database().ref('/' + path).remove().then(() => {
         this.cakes = [];
-        this.fbGetData();
+        this.fbUpdateData();
       });
     })
   }
-
 }
